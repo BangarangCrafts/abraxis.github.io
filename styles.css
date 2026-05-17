@@ -96,14 +96,16 @@ body {
     text-shadow: 0 0 2px #e9c27c;
 }
 
+/* HEADING – now scales and stays on one line */
 .ticket-header h1 {
     font-family: 'Cinzel', serif;
     font-weight: 700;
-    font-size: 2rem;
-    letter-spacing: 4px;
+    font-size: clamp(1.2rem, 6vw, 2rem);
+    letter-spacing: clamp(2px, 1vw, 4px);
     color: #2c1a0c;
     text-shadow: 0 1px 0 #e9cf9e;
     margin: 0;
+    white-space: nowrap;
 }
 
 /* UPDATED: Centered subtitle under main heading */
@@ -115,9 +117,9 @@ body {
     color: #a27b50;
     border-top: 1px solid #ecdbba;
     border-bottom: 1px solid #ecdbba;
-    display: block;           /* changed from inline-block to block */
-    width: 100%;             /* full width of container */
-    margin: 0.5rem auto 1.5rem auto;  /* center and add spacing */
+    display: block;
+    width: 100%;
+    margin: 0.5rem auto 1.5rem auto;
     padding: 0.25rem 0;
     text-transform: uppercase;
 }
@@ -219,10 +221,6 @@ body {
     .fortune-text {
         font-size: 1.3rem;
     }
-    .ticket-header h1 {
-        font-size: 1.6rem;
-        letter-spacing: 2px;
-    }
     .star-icon {
         font-size: 1.2rem;
     }
@@ -237,5 +235,23 @@ body {
     .ticket-subtitle {
         font-size: 0.6rem;
         letter-spacing: 2px;
+    }
+    /* Reduce gap between stars and heading on narrow screens */
+    .ticket-header {
+        gap: 0.5rem;
+    }
+}
+
+/* Extra tiny screens for safety */
+@media (max-width: 420px) {
+    .ticket-header h1 {
+        font-size: clamp(1rem, 5vw, 1.4rem);
+        letter-spacing: 1px;
+    }
+    .star-icon {
+        font-size: 1rem;
+    }
+    .ticket-header {
+        gap: 0.3rem;
     }
 }
