@@ -296,6 +296,8 @@ function updateLuckyNumbers() {
 function displayRandomFortune() {
     const fortuneTextEl = document.getElementById('fortuneText');
     const ticketEl = document.querySelector('.ticket');
+    const tokenEl = document.querySelector('.collector-token');
+    
     if (fortuneTextEl) {
         fortuneTextEl.style.opacity = '0';
         setTimeout(() => {
@@ -307,6 +309,18 @@ function displayRandomFortune() {
     if (ticketEl) {
         ticketEl.classList.add('ticket-pulse');
         setTimeout(() => ticketEl.classList.remove('ticket-pulse'), 420);
+    }
+    // ✨ Extra magic: subtle flicker on the collector token
+    if (tokenEl) {
+        tokenEl.style.transition = 'opacity 0.2s';
+        tokenEl.style.opacity = '0.6';
+        setTimeout(() => {
+            tokenEl.style.opacity = '1';
+        }, 200);
+        setTimeout(() => {
+            tokenEl.style.opacity = '';
+            tokenEl.style.transition = '';
+        }, 500);
     }
 }
 
