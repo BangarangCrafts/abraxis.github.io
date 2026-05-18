@@ -255,3 +255,36 @@ body {
         gap: 0.3rem;
     }
 }
+
+/* Collector's Token - Footer Signature */
+.collector-token {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.75rem;
+    text-align: center;
+    color: #a27b50;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.5px;
+    border-top: 1px dotted #e2cfb5;
+    padding-top: 0.75rem;
+}
+
+.collector-token a {
+    color: #b47c44;
+    text-decoration: none;
+    border-bottom: 1px dashed #dbb87c;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.collector-token a:hover {
+    color: #8b5a2e;
+    border-bottom-color: #8b5a2e;
+}
+
+/* Responsive adjustment for very small screens */
+@media (max-width: 550px) {
+    .collector-token {
+        font-size: 0.65rem;
+        margin-bottom: 0.5rem;
+        padding-top: 0.5rem;
+    }
+}
